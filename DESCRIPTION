@@ -1,0 +1,15 @@
+Package: coffee
+Title: Stuff that helps me get going
+Version: 0.0.0.9000
+Author: Tim Taylor with contributions by Dirk Eddelbuettel, Bob Rudis and others.
+Maintainer: Tim Taylor <tim.taylor@hiddenelephants.co.uk>
+Description: Miscellaneous helper functions and scripts.
+URL: https://github.com/tjtnew/coffee
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Imports: 
+    dang,
+    gert,
+    rstudioapi

@@ -1,0 +1,24 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# coffee
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+![coffee silhouette](artwork/477px-Coffee_cup_flat.svg.png)
+
+
+Starting to collate my helper functions and scripts in one place ...
