@@ -1,21 +1,23 @@
 #' Easy quote characters
 #'
-#' @param x Character vector which you wish to split on spaces
-#' @param ... Unquoted variables (seperated by commas) that you wish to quote
+#' @param x either an unquoted variable or a quoted string which you wish to split on spaces;
+#'   all white space will be trimmed, then normalized to a single space
+#' @param ... unquoted variables (seperated by commas) that you wish to quote;
+#'   empty arguments (e.g. third item in `one,two,,four`) will be returned as blanks
+#'
+#' @return a character vector
+#'
+#' @examples
+#' cq("  dale    audrey   laura hawk ")
+#' cq(dale, audrey, laura, hawk)
 #'
 #' @importFrom utils capture.output
 #' @export
 cq <- function(x, ...) {
-  if (is.character(substitute(x))) {
-    res <- trimws(x)
-    res <- strsplit(res, "[[:space:]]+")
-    if (length(res) == 1L) res <- unlist(res)
-  } else {
-    pr <- substitute(list(x, ...))
-    pr <- vapply(pr, deparse, character(1))
-    res <- pr[-1]
-  }
-  tmp <- capture.output(dput(res, control = "all"))
-  clipr::write_clip(tmp)
+  (if (is.character(substitute(x)))
+     unlist(strsplit(trimws(x), "[[:space:]]+"))
+   else
+     vapply(substitute(list(x, ...)), deparse, character(1))[-1]) -> res
+  clipr::write_clip(capture.output(dput(res, control = "all")))
   res
 }
