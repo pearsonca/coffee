@@ -17,7 +17,8 @@ cq <- function(...) {
 #' @rdname cq
 #' @export
 ccq <- function(x) {
-  res <- strsplit(x, "[[:space:]]+")
+  res <- sub("^[[:space:]]+", "", x)
+  res <- strsplit(res, "[[:space:]]+")
   if (length(res) == 1L) res <- unlist(res)
   tmp <- capture.output(dput(res, control = "all"))
   clipr::write_clip(tmp)
