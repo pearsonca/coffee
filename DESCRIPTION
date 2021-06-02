@@ -1,7 +1,7 @@
 Package: coffee
 Title: Stuff that helps me get going
 Version: 0.0.0.9000
-Author: Tim Taylor with contributions by Dirk Eddelbuettel, Bob Rudis, Carl Pearson and others.
+Author: Tim Taylor with indirect contributions by Dirk Eddelbuettel, Bob Rudis, Carl Pearson and others.
 Maintainer: Tim Taylor <tim.taylor@hiddenelephants.co.uk>
 Description: Miscellaneous helper functions and scripts.
 URL: https://github.com/tjtnew/coffee
